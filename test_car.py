@@ -31,7 +31,7 @@ class TestCalliope(unittest.TestCase):
 
     def test_engine_should_be_serviced(self):
         last_service_date = datetime.today().date()
-        current_mileage = 30001
+        current_mileage = 3000
         last_service_mileage = 0
 
         car = CarFactory.get_Calliope(last_service_date=last_service_date, current_mileage=current_mileage, last_service_mileage=last_service_mileage)
@@ -44,6 +44,16 @@ class TestCalliope(unittest.TestCase):
 
         car = CarFactory.get_Calliope(last_service_date=last_service_date, current_mileage=current_mileage, last_service_mileage=last_service_mileage)
         self.assertFalse(car.needs_service())
+
+    def test_tyre_should_not_be_serviced(self):
+        tyreSensorArray = [0.1, 0.1, 0.5, 0.1]
+        car = CarFactory.get_Calliope(tyreSensorArray=tyreSensorArray)
+        self.assertFalse(car.needs_service())
+
+    def test_tyre_should_be_serviced(self):
+        tyreSensorArray = [1, 1, 1, 0.9]
+        car = CarFactory.get_Calliope(tyreSensorArray=tyreSensorArray)
+        self.assertTrue(car.needs_service())
 
 
 class TestGlissade(unittest.TestCase):
@@ -84,6 +94,16 @@ class TestGlissade(unittest.TestCase):
         car = CarFactory.get_Glissade(last_service_date=last_service_date, current_mileage=current_mileage, last_service_mileage=last_service_mileage)
         self.assertFalse(car.needs_service())
 
+    def test_tyre_should_not_be_serviced(self):
+        tyreSensorArray = [0.1, 0.1, 0.5, 0.1]
+        car = CarFactory.get_Glissade(tyreSensorArray=tyreSensorArray)
+        self.assertFalse(car.needs_service())
+
+    def test_tyre_should_be_serviced(self):
+        tyreSensorArray = [0.1, 0.1, 1, 0.1]
+        car = CarFactory.get_Glissade(tyreSensorArray=tyreSensorArray)
+        self.assertTrue(car.needs_service())
+
 
 class TestPalindrome(unittest.TestCase):
     def test_battery_should_be_serviced(self):
@@ -115,6 +135,16 @@ class TestPalindrome(unittest.TestCase):
 
         car = CarFactory.get_Palindrome(last_service_date=last_service_date, indicator_warning=warning_light_is_on)
         self.assertFalse(car.needs_service())
+
+    def test_tyre_should_not_be_serviced(self):
+        tyreSensorArray = [0.1, 0.1, 0.5, 0.1]
+        car = CarFactory.get_Palindrome(tyreSensorArray=tyreSensorArray)
+        self.assertFalse(car.needs_service())
+
+    def test_tyre_should_be_serviced(self):
+        tyreSensorArray = [0.1, 0.1, 1, 0.1]
+        car = CarFactory.get_Palindrome(tyreSensorArray=tyreSensorArray)
+        self.assertTrue(car.needs_service())
 
 
 class TestRorschach(unittest.TestCase):
@@ -152,6 +182,16 @@ class TestRorschach(unittest.TestCase):
         car = CarFactory.get_Rorschach(last_service_date=last_service_date, current_mileage=current_mileage, last_service_mileage=last_service_mileage)
         self.assertFalse(car.needs_service())
 
+    def test_tyre_should_not_be_serviced(self):
+        tyreSensorArray = [0.1, 0.1, 0.5, 0.1]
+        car = CarFactory.get_Rorschach(tyreSensorArray=tyreSensorArray)
+        self.assertFalse(car.needs_service())
+
+    def test_tyre_should_be_serviced(self):
+        tyreSensorArray = [1, 1, 1, 0.9]
+        car = CarFactory.get_Rorschach(tyreSensorArray=tyreSensorArray)
+        self.assertTrue(car.needs_service())
+
 
 class TestThovex(unittest.TestCase):
     def test_battery_should_be_serviced(self):
@@ -187,6 +227,16 @@ class TestThovex(unittest.TestCase):
 
         car = CarFactory.get_Thovex(last_service_date=last_service_date, current_mileage=current_mileage, last_service_mileage=last_service_mileage)
         self.assertFalse(car.needs_service())
+
+    def test_tyre_should_not_be_serviced(self):
+        tyreSensorArray = [0.1, 0.1, 0.5, 0.1]
+        car = CarFactory.get_Thovex(tyreSensorArray=tyreSensorArray)
+        self.assertFalse(car.needs_service())
+
+    def test_tyre_should_be_serviced(self):
+        tyreSensorArray = [1, 1, 1, 0.9]
+        car = CarFactory.get_Thovex(tyreSensorArray=tyreSensorArray)
+        self.assertTrue(car.needs_service())
 
 
 if __name__ == '__main__':

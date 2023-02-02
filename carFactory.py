@@ -8,19 +8,19 @@ from engine.model.glissade import Glissade
 
 class CarFactory:
     @staticmethod
-    def get_Calliope(last_service_date, current_mileage, last_service_mileage, indicator_warning):
-        return Calliope(last_service_date, current_mileage, last_service_mileage, indicator_warning)
+    def get_Calliope(last_service_date=0, current_mileage=0, last_service_mileage=0, indicator_warning=False):
+        return Calliope(last_service_date=last_service_date, current_mileage=current_mileage, last_service_mileage=last_service_mileage, indicator_warning=indicator_warning)
 
     @staticmethod
-    def get_Thovex(last_service_date, current_mileage, last_service_mileage, indicator_warning):
-        return Thovex(last_service_date, current_mileage, last_service_mileage, indicator_warning)
+    def get_Thovex(last_service_date=0, current_mileage=0, last_service_mileage=0, indicator_warning=False):
+        return Thovex(last_service_date=last_service_date, current_mileage=current_mileage, last_service_mileage=last_service_mileage, indicator_warning=indicator_warning)
 
     @staticmethod
-    def get_Palindrome(last_service_date, current_mileage, last_service_mileage, indicator_warning):
-        return Palindrome(last_service_date, current_mileage, last_service_mileage, indicator_warning)
+    def get_Palindrome(last_service_date=0, current_mileage=0, last_service_mileage=0, indicator_warning=False):
+        return Palindrome(last_service_date=last_service_date, current_mileage=current_mileage, last_service_mileage=last_service_mileage, indicator_warning=indicator_warning)
     @staticmethod
-    def get_Rorschach(last_service_date, current_mileage, last_service_mileage, indicator_warning):
-        return Rorschach(last_service_date, current_mileage, last_service_mileage, indicator_warning)
+    def get_Rorschach(last_service_date=0, current_mileage=0, last_service_mileage=0, indicator_warning=False):
+        return Rorschach(last_service_date=last_service_date, current_mileage=current_mileage, last_service_mileage=last_service_mileage, indicator_warning=indicator_warning)
     @staticmethod
-    def get_Glissade(last_service_date, current_mileage, last_service_mileage, indicator_warning):
-        return Glissade(last_service_date, current_mileage, last_service_mileage, indicator_warning)
+    def get_Glissade(last_service_date=0, current_mileage=0, last_service_mileage=0, indicator_warning=False):
+        return Glissade(last_service_date=last_service_date, current_mileage=current_mileage, last_service_mileage=last_service_mileage, indicator_warning=indicator_warning)

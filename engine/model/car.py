@@ -1,7 +1,7 @@
 from abc import ABC, abstractmethod
 
 class Car(ABC):
-    def __init__(self, last_service_date=0, current_mileage=0, last_service_mileage=0, indicator_warning=False) -> None:
+    def __init__(self, last_service_date, current_mileage, last_service_mileage, indicator_warning) -> None:
         self.last_service_date = last_service_date
         self.current_mileage = current_mileage
         self.last_service_mileage = last_service_mileage
